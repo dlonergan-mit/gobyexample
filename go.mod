@@ -1,4 +1,4 @@
-module github.com/inancgumus/gobyexample
+module github.com/dlonergan-mit/gobyexample
 
 go 1.22
 

@@ -1,18 +1,18 @@
 package url_test
 
 import (
-	"fmt"
-	"log"
+        "fmt"
+        "log"
 
-	"github.com/inancgumus/gobyexample/testing/url"
+        "github.com/dlonergan-mit/gobyexample/testing/url"
 )
 
 func ExampleParse() {
-	u, err := url.Parse("https://go.dev/play")
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(u)
-	// Output:
-	// https://go.dev/play
+        u, err := url.Parse("https://go.dev/play")
+        if err != nil {
+                log.Fatal(err)
+        }
+        fmt.Println(u)
+        // Output:
+        // https://go.dev/play
 }

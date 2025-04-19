@@ -2,11 +2,11 @@
 package sqlxtest
 
 import (
-	"context"
-	"fmt"
-	"testing"
+        "context"
+        "fmt"
+        "testing"
 
-	"github.com/inancgumus/gobyexample/bite/sqlx"
+        "github.com/dlonergan-mit/gobyexample/bite/sqlx"
 )
 
 // Dial opens and returns an in-memory test database pool
@@ -14,21 +14,21 @@ import (
 // the test is finished.
 // Avoid calling Dial multiple times in a single test.
 func Dial(ctx context.Context, tb testing.TB) *sqlx.DB {
-	tb.Helper()
+        tb.Helper()
 
-	dsn := fmt.Sprintf("file:%s?mode=memory&cache=shared", tb.Name())
+        dsn := fmt.Sprintf("file:%s?mode=memory&cache=shared", tb.Name())
 
-	db, err := sqlx.Dial(ctx, sqlx.DefaultDriver, dsn)
-	if err != nil {
-		tb.Fatalf("dialing test db: %v", err)
-	}
-	tb.Cleanup(func() {
-		if err := db.Close(); err != nil {
-			tb.Log("closing test db:", err)
-		}
-	})
+        db, err := sqlx.Dial(ctx, sqlx.DefaultDriver, dsn)
+        if err != nil {
+                tb.Fatalf("dialing test db: %v", err)
+        }
+        tb.Cleanup(func() {
+                if err := db.Close(); err != nil {
+                        tb.Log("closing test db:", err)
+                }
+        })
 
-	return db
+        return db
 }
 
 // You can add another Dial here for opening a non-memory database.

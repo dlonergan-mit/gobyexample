@@ -1,11 +1,11 @@
 package main
 
 import (
-	"fmt"
+        "fmt"
 
-	"github.com/inancgumus/gobyexample/book"
+        "github.com/dlonergan-mit/gobyexample/book"
 )
 
 func main() {
-	fmt.Println(book.Title())
+        fmt.Println(book.Title())
 }
